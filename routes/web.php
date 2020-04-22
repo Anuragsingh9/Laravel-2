@@ -138,13 +138,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/////////Route for creating XLS files\\\\\\\\\\\\\\\
+//Route for creating xls files
 
 Route::get('/export_excel', 'ExportExcelController@index');
-Route::get('/export', 'ExportController@export');
+//Route::get('/export', 'ExportController@export');
 
-// Route::get('/export_excel/excel', 'ExportExcelController@excel')->name('export_excel.excel');
+Route::get('/export_excel/excel', 'ExportExcelController@excel')->name('export_excel.excel');
+
+//Route for testing
+Route::get('anurags',function (){
+    return "Welcome to developers zone";
+});
 
 
-
-
+//Route for event check
+Route::get('event','EvenController@details');

@@ -14,8 +14,16 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('/anurags');
 
         $response->assertStatus(200);
+    }
+
+
+    public function testDocBasic()
+    {
+        $response = $this->get('/anurags');
+        
+        $response->assertSee("Welcome to developers zone");
     }
 }
