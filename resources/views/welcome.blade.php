@@ -69,6 +69,11 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        @can('subs', Auth::user())
+                        <a href="{{ url('/subs') }}">Subscriber</a>
+                        @endcan
+                        
+
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

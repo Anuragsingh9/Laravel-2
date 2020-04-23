@@ -4,6 +4,9 @@ use App\Helper\ImageFilter;
 use Illuminate\Support\Facades\Route;
 use Intervention\Image\ImageManagerStatic;
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +30,9 @@ Route::get('/main', function () {
 
 
 Route::get('/', function () {
-    return view('pages.homepage');
+    return view('welcome');
+
+    //return view('pages.homepage');
 });
 
 Route::get('/register', function () {
@@ -153,3 +158,14 @@ Route::get('anurags',function (){
 
 //Route for event check
 Route::get('event','EvenController@details');
+
+
+Route::get('subs',function(){
+    if (Gate::allows('subs', Auth::user())) {
+    return view('subs');
+
+        
+    }else{
+        return "You are not allowed";
+    }
+});

@@ -25,6 +25,12 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+            Gate::define('subs', function ($user) {
+                if($user->subs == 1){
+                    return true;
+                }
+                return false;
+            });
 
         Passport::routes();
         // $startTime = date("Y-m-d H:i:s");
