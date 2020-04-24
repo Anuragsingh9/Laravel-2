@@ -169,3 +169,17 @@ Route::get('subs',function(){
         return "You are not allowed";
     }
 });
+
+
+Route::get('nav',function(){
+    return view('nav');
+});
+
+
+App::bind("App\SocialMedia\Facebook",function(){
+    return new App\SocialMedia\Facebook(config('services.facebook'));
+});
+
+$facebook=App::make('App\SocialMedia\Facebook');
+dd($facebook);
+// dd($facebook);

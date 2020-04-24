@@ -166,7 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        
         /*
          * Application Service Providers...
          */
@@ -178,6 +178,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Anurag\Contact\ContactServiceProvider::class,
+        App\Providers\NavServiceProvider::class,
     ],
 
     /*
